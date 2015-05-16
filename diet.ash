@@ -1,4 +1,4 @@
-script "hero.ash";
+script "diet.ash";
 
 /*
 Custom methods
@@ -137,17 +137,4 @@ void day_drinking(){
             drink(1, $item[thermos full of Knob coffee]);
         }
     }
-}
-
-/*
-BEGIN ACTUAL SCRIPT
-*/
-if( my_inebriety() == 0){
-    day_drinking();
-}
-if( my_fullness() == 0){
-    morning_meal();
-}
-if( my_spleen_use() == 0){
-    spleening();
 }
