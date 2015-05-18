@@ -100,10 +100,11 @@ void day_drinking(){
         buy(1, bought_booze);
     }
 
-    for i from 0 to 9999 {
+    for i from 0 to 12 {
+        wait(15);
         if( have_effect( $effect[Ode to Booze]) > 20){
             break;
-        }else if( i > 9990){
+        }else if( i == 12){
                 print("No response from Buffy");
                 abort();
         } 
