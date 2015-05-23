@@ -66,9 +66,9 @@ void farm_barf_mountain(int turns){
     get_regular_meat_buffs(turns);
     outfit( 'meat');
     equip( $item[astral pet sweater]);
-    int starting_adv = my_adventures();\
+    int starting_adv = my_adventures();
     while( my_adventures() > starting_adv - turns ){
-        if( adventure(turns, $location[barf mountain]) == false){
+        if( adventure(turns - (starting_adv - my_adventures()), $location[barf mountain]) == false){
             if( my_mp() <= my_maxmp() * 0.11){
                 cli_execute('nuns');
             }else{
@@ -95,8 +95,7 @@ void farm_embezzlers(){
     while( item_amount($item[Spooky Putty monster]) > 0){
         use(1, $item[Spooky Putty monster]);
     }
-    visit_url('place.php?whichplace=chateau&action=chateau_painting');
+    //visit_url('place.php?whichplace=chateau&action=chateau_painting');
 }
-
 farm_embezzlers();
 farm_barf_mountain(my_adventures());

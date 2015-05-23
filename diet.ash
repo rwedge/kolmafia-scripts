@@ -52,7 +52,7 @@ void day_drinking(){
         sangria_needed = 3;
     }
     while( item_amount( $item[Sangria de Menthe]) < sangria_needed){
-        if( creatable_amount( $item[peppermint twist]) == 0){
+        if( item_amount( $item[peppermint twist]) == 0){
             sangria_needed = 3;
             buy_booze = true;
         }else if( item_amount( $item[boxed wine]) > 0){
@@ -63,7 +63,6 @@ void day_drinking(){
             create(3, $item[boxed wine]);        
         }
     }
-
     while( item_amount( $item[Paint A Vulgar Pitcher]) < 6){
         if( item_amount( $item[handful of Smithereens]) > 0){
             acquire(1, 'plain old beer');
