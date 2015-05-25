@@ -17,7 +17,9 @@ if( my_fullness() == 0){
 if( my_spleen_use() == 0){
     spleening();
 }
-
+if ( get_property("_chocolatesUsed") == 0){
+    eat_choco_disco_ball();
+}
 /*
 Buffs up via Buffy and the mall, then equips farming gear and farms Barf Mountain
 */
@@ -95,7 +97,8 @@ void farm_embezzlers(){
     while( item_amount($item[Spooky Putty monster]) > 0){
         use(1, $item[Spooky Putty monster]);
     }
-    //visit_url('place.php?whichplace=chateau&action=chateau_painting');
+    visit_url('place.php?whichplace=chateau&action=chateau_painting');
+    run_combat();
 }
 farm_embezzlers();
 farm_barf_mountain(my_adventures());

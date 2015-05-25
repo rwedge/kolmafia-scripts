@@ -31,6 +31,11 @@ void spleening(){
     chew(4, $item[coffee pixie stick]);
 }
 
+/* Chocolate */
+void eat_choco_disco_ball(){
+    acquire(2, 'chocolate disco ball');
+    use(2, $item[chocolate disco ball]);
+}
 
 /* Booze */
 void day_drinking(){
