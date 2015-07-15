@@ -130,3 +130,22 @@ void day_drinking(){
         }
     }
 }
+
+void nightcap(){
+    if( have_effect( $effect[Cringle's Curative Carol]) > 0){
+        cli_execute("shrug cringle");
+    }
+    chat_private('Buffy', 'ode');
+    acquire(1, 'bucket of wine');
+    outfit( 'nightcap');
+    for i from 0 to 12 {
+        wait(15);
+        if( have_effect( $effect[Ode to Booze]) > 9){
+            break;
+        }else if( i == 12){
+                print("No response from Buffy");
+                abort();
+        } 
+    }
+    drink(1, $item[bucket of wine]);
+}

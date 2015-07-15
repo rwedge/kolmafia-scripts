@@ -20,6 +20,17 @@ if( my_spleen_use() == 0){
 if ( get_property("_chocolatesUsed") == 0){
     eat_choco_disco_ball();
 }
+
+/*
+Cheat at Deck of Every Card
+*/
+if( get_property( '_deckCardsDrawn') < 15){
+    cli_execute( 'cheat knife');
+    cli_execute( 'cheat 1952');
+    cli_execute( 'cheat island'); 
+}
+
+
 /*
 Buffs up via Buffy and the mall, then equips farming gear and farms Barf Mountain
 */
@@ -102,3 +113,4 @@ void farm_embezzlers(){
 }
 farm_embezzlers();
 farm_barf_mountain(my_adventures());
+nightcap();
