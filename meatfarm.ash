@@ -4,6 +4,8 @@ void get_temporary_meat_buffs(){
     visit_url('shop.php?whichshop=hippy');
     // Winklered from concert arena
     cli_execute('concert Winklered');
+    // Rest in campground for snow fortified
+    visit_url('campground.php?action=rest');
 }
 /*
 Eat to start the day
