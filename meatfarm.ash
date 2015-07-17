@@ -6,6 +6,8 @@ void get_temporary_meat_buffs(){
     cli_execute('concert Winklered');
     // Rest in campground for snow fortified
     visit_url('campground.php?action=rest');
+    // grab meat from chateau piggy bank
+    visit_url('place.php?whichplace=chateau&action=chateau_desk1');
 }
 /*
 Eat to start the day
