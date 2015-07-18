@@ -24,6 +24,20 @@ void morning_meal(){
     }
 }
 
+void pantsgiving_fullness(){
+    if( have_effect( $effect[Got Milk]) < 1){
+        acquire(1, 'milk of magnesium');
+        use(1, $item[milk of magnesium]);
+    }
+    item[3] pants_food; pants_food[0] = $item[whole turkey leg]; pants_food[1] = $item[cold mashed potatoes]; pants_food[2] = $item[dinner roll];
+    for i from 0 to count(pants_food) - 1 {
+        if(  item_amount( pants_food[i]) > 0){
+            eat(1, pants_food[i]);
+            break;
+        }
+    }
+}
+
 /* Spleen */
 void spleening(){
     acquire(41, 'game grid ticket');

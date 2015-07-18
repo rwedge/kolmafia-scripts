@@ -5,9 +5,12 @@ void get_temporary_meat_buffs(){
     // Winklered from concert arena
     cli_execute('concert Winklered');
     // Rest in campground for snow fortified
-    visit_url('campground.php?action=rest');
+    if( get_property( 'timesRested') < 1)
+        visit_url('campground.php?action=rest');
     // grab meat from chateau piggy bank
     visit_url('place.php?whichplace=chateau&action=chateau_desk1');
+    // play pool
+    cli_execute('pool 1');cli_execute('pool 1');cli_execute('pool 1');
 }
 /*
 Eat to start the day
@@ -116,5 +119,11 @@ void farm_embezzlers(){
     run_combat();
 }
 farm_embezzlers();
+farm_barf_mountain(my_adventures());
+
+while( my_fullness() < fullness_limit()){
+    pantsgiving_fullness();
+    farm_barf_mountain(1);
+}
 farm_barf_mountain(my_adventures());
 nightcap();
