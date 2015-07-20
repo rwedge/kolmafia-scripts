@@ -1,3 +1,4 @@
+import <globals.ash>;
 import <diet.ash>;
 void get_temporary_meat_buffs(){
     // Daily meat from hippy store
@@ -11,6 +12,27 @@ void get_temporary_meat_buffs(){
     visit_url('place.php?whichplace=chateau&action=chateau_desk1');
     // play pool
     cli_execute('pool 1');cli_execute('pool 1');cli_execute('pool 1');
+    // summon meat demon
+    if( get_property('demonSummoned') == false){
+        acquire(3, 'thin black candle');
+        if( item_amount($item[scroll of ancient forbidden unspeakable evil]) < 1){
+            int item_price = mall_price($item[scroll of ancient forbidden unspeakable evil]);
+            int combine_price; combine_price += mall_price($item[tattered scrap of paper]);
+            combine_price += mall_price($item[inkwell]); combine_price += mall_price($item[disintegrating quill pen]);
+            float buff_profit = 30 * 100 * REG_TARGET_MPPMD - 864;
+            if( item_price < buff_profit || combine_price < buff_profit){
+                if( item_price < combine_price){
+                    acquire(1, 'scroll of ancient forbidden unspeakable evil');
+                }else{
+                    acquire(1, 'tattered scrap of paper'); acquire(1, 'inkwell'); acquire(1, 'disintegrating quill pen');
+                    use(1, $item[disintegrating quill pen]);
+                }
+                cli_execute('summon 2');            
+            }
+        }else{
+            cli_execute('summon 2');
+        }
+    }
 }
 /*
 Eat to start the day
@@ -123,7 +145,7 @@ farm_barf_mountain(my_adventures());
 
 while( my_fullness() < fullness_limit()){
     pantsgiving_fullness();
-    farm_barf_mountain(1);
+    farm_barf_mountain(2);
 }
 farm_barf_mountain(my_adventures());
 nightcap();
