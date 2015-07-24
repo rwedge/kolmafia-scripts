@@ -33,6 +33,14 @@ void get_temporary_meat_buffs(){
             cli_execute('summon 2');
         }
     }
+    // get dna potions
+    if( get_property('_dnaPotionsMade') == 0){
+        cli_execute('camp dnapotion 3');
+        use(3, $item[Gene Tonic: Fish]);    
+    }
+    // legendary beat
+    use(1, $item[The Legendary Beat]);
+
 }
 /*
 Eat to start the day
